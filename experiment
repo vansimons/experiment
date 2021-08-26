@@ -1,0 +1,71 @@
+// @ts-nocheck
+function myFunction() 
+  
+   
+      setHorizontalAlignments(fileHorizontalAlignments)
+      .setBorder(true, true, true, true, true, true, "#D3D3D3", null)
+      .setFontSize(14);
+
+       function dataIntoPDF(data)
+       
+
+           
+    
+
+       
+	 
+	
+  
+
+       sheet = SpreadsheetApp.getActiveSheet();
+					var lastRow = sheet.getLastRow();
+					sheet.getRange(lastRow + 1,1,csvData.length, csvData[0].length).setValues(csvData);
+
+          evaluate()
+
+          var lock = LockService.getPublicLock
+
+
+          
+	var ui = SpreadsheetApp.getUi();
+  importCSVFromFolder()
+  
+   var doc = SpreadsheetApp.openById('SHEET_FILE_ID');
+    var sheet = doc.getSheetByName('Results');
+    var RFPsheet = doc.getSheetByName('RFPasPDF');
+    
+    var data = [[form.memberName,
+                 form.memberPOC,
+                 form.memberEmail,
+                 form.memberCell,
+                 form.categories,
+                 form.suppliers,
+                 form.suppliersPOC,
+                 form.supplierNonRD,
+                 form.clientName,
+                 form.brandName,
+                 form.programName,
+                 form.programDesc,
+                 form.proposalDueDate,
+                 form.programStartDate,
+                 form.programEndDate,
+                 form.totalBudget,
+                 form.itemName,
+                 form.itemDesc,
+                 form.itemQuantity,
+                 form.itemCost
+                ]];
+    
+    var outputRange = sheet.getRange(sheet.getLastRow()+1, 1, 1, 20);
+    outputRange.setValues(data.map(function(d)
+       
+    
+      
+     file = folder.createFile(blob);    
+    file.setDescription("Uploaded by " + form.memberName);
+    var fileUrl = file.getUrl();
+    Logger.log(fileUrl);
+    sheet.getRange(sheet.getLastRow(), 22).setFormula('=hyperlink("' + fileUrl + '","Image")');  // e.g. =HYPERLINK("http://www.google.com/", "Google")
+    var supplierSheet = SpreadsheetApp.openById('SHEET_FILE_ID').getSheetByName('Suppliers');
+    
+
